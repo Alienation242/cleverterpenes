@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0f0f10;
+  --color-card: #1a1a19;
+  --color-raised: #242423;
+  --color-field: #2c2c2a;
+  --color-grid: #2c2c2a;
+  --color-line: #383835;
+  --color-ink: #ffffff;
+  --color-ink-2: #c3c2b7;
+  --color-ink-3: #898781;
+  --color-heat: #ff6a3d;
+  --color-air: #4cc2ff;
+  /* chart series (validated for the dark surface #1a1a19) */
+  --color-terp: #3987e5;
+  --color-cann: #d95926;
+  /* status (always paired with an icon + label) */
+  --color-good: #0ca30c;
+  --color-warn: #fab219;
+  --color-serious: #ec835a;
+  --color-critical: #d03b3b;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html,
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    min-height: 100dvh;
+    font-feature-settings: "ss01";
+  }
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+  button:disabled {
+    cursor: not-allowed;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-air);
+    outline-offset: 2px;
+  }
+  input[type="range"] {
+    accent-color: var(--color-heat);
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@utility safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}

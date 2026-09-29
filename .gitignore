@@ -1,0 +1,10 @@
+node_modules
+dist
+dev-dist
+scripts/.cache
+*.log
+.DS_Store
+research_notes/
+reports/
+release/
+.claude/
